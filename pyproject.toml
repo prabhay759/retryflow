@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "retryflow"
 version = "1.0.0"
-description = "Smart retry engine with exponential backoff, jitter, per-exception rules, timeout, and async support"
+description = "Smart retry engine with exponential backoff, jitter, per-attempt timeout, and async support"
 readme = "README.md"
 requires-python = ">=3.8"
 license = { text = "MIT" }
@@ -33,6 +33,10 @@ dev = ["pytest>=7", "pytest-asyncio>=0.21"]
 Homepage = "https://github.com/prabhay759/retryflow"
 Repository = "https://github.com/prabhay759/retryflow"
 Issues = "https://github.com/prabhay759/retryflow/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["retryflow*"]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
